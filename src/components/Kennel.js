@@ -26,13 +26,15 @@ const Kennel = () => {
         <AnimalCard />
         <AnimalCard />
       </div>
-      <div>
+      <div className="container-cards">
+        <EmployeeCard />
+        <EmployeeCard />
         <EmployeeCard />
       </div>
-      <div>
+      <div className="container-cards">
         <LocationCard />
       </div>
-      <div>
+      <div className="container-cards">
         <OwnerCard />
       </div>
 
