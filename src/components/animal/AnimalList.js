@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 //import the components we will need
 import AnimalCard from './AnimalCard';
-import AnimalManager from '../../modules/AnimalManager';
+
+import CommonManager from '../../modules/CommonManager'
 
 const AnimalList = () => {
     console.log("Component Animal List")
@@ -9,10 +10,12 @@ const AnimalList = () => {
   const [animals, setAnimals] = useState([]);
 
   const getAnimals = () => {
-      console.log("getAnimals")
+      console.log("COMMON getAnimals")
+      const type = "animals"
+      
     // After the data comes back from the API, we
     //  use the setAnimals function to update state
-    return AnimalManager.getAll().then(animalsFromAPI => {
+    return CommonManager.getAll(type).then(animalsFromAPI => {
       setAnimals(animalsFromAPI)
     });
   };
