@@ -1,7 +1,7 @@
 import React from "react";
 import './Owner.css'
 
-const OwnerCard = () => {
+const OwnerCard = props => {
   return (
     <div className="card">
       <div className="card-content">
@@ -9,9 +9,10 @@ const OwnerCard = () => {
           <img src={require("./bubbles.jpg")} alt="Bubbles" />
         </picture>
         <h3>
-          Name: <span className="card-petname">Bubbles</span>
+          Name: <span className="card-petname">{props.person.name}</span>
         </h3>
-        <p>Owner of the Month</p>
+        <p>{props.person.title}</p>
+        <button type="button" onClick={() => props.deleteOwner(props.person.id,"owners")}>Disappear</button>
       </div>
     </div>
   );
