@@ -1,6 +1,6 @@
 import React from "react";
 
-const EmployeeCard = () => {
+const EmployeeCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
@@ -8,9 +8,9 @@ const EmployeeCard = () => {
           <img src={require("./bubbles2.jpg")} alt="Bubbles" />
         </picture>
         <h3>
-          Name: <span className="card-petname">Bubbles</span>
+          Name: <span className="card-petname">{props.person.name}</span>
         </h3>
-        <p>Employee of the Month</p>
+        <p>{props.person.title}</p>
       </div>
     </div>
   );
