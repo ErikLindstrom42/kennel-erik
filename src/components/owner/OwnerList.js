@@ -16,6 +16,11 @@ const OwnerList = () => {
             setOwners(ownersFromAPI)
         })
     }
+    const deleteOwner = (id,type) => {
+        CommonManager.delete(id,type)
+          .then(() => CommonManager.getAll(type).then(setOwners));
+      };
+
 
 useEffect(() => {
     console.log("useEffect")
@@ -24,9 +29,13 @@ useEffect(() => {
 
 return (
     <div className="container-cards">
-        {owners.map(owner => <OwnerCard key={owner.id} person={owner} />)}
-    </div>
-) 
+      {owners.map(owner => <OwnerCard 
+          key={owner.id} //passes unique id
+          person={owner} //passes entire owner
+          deleteOwner={deleteOwner} //passes delete function
+
+          />)}
+    </div>) 
 
 }
 

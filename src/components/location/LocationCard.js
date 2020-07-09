@@ -1,4 +1,5 @@
 import React from "react";
+import './Location.css'
 
 const LocationCard = (props) => {
   return (
@@ -11,6 +12,7 @@ const LocationCard = (props) => {
           Location: <span className="card-petname">{props.spot.location}</span>
         </h3>
         <p>Facility: {props.spot.name}</p>
+        <button type="button" onClick={() => props.deleteLocation(props.spot.id,"locations")}>Burn Down</button>
       </div>
     </div>
   );
