@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //import the components we will need
 import EmployeeCard from './EmployeeCard';
-import EmployeeManager from '../../modules/EmployeeManager';
+import CommonManager from '../../modules/CommonManager';
 
 const EmployeeList = () => {
     console.log("Component employee List")
@@ -9,10 +9,11 @@ const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
   const getEmployees = () => {
-      console.log("getEmployees")
+      console.log("COMMON getEmployees")
+      const type = "employees"
     // After the data comes back from the API, we
     //  use the setemployees function to update state
-    return EmployeeManager.getAll().then(employeesFromAPI => {
+    return CommonManager.getAll(type).then(employeesFromAPI => {
       setEmployees(employeesFromAPI)
     });
   };

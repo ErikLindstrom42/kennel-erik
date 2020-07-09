@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //import the components we will need
 import OwnerCard from './OwnerCard';
-import OwnerManager from '../../modules/OwnerManager';
+import CommonManager from '../../modules/CommonManager';
 
 const OwnerList = () => {
     console.log("Component Owner List")
@@ -9,9 +9,10 @@ const OwnerList = () => {
     const [owners, setOwners] = useState([])
 
     const getOwners = () => {
-        console.log("getOwners")
+        console.log("COMMON getOwners")
+        const type = "owners"
 
-        return OwnerManager.getAll().then(ownersFromAPI => {
+        return CommonManager.getAll(type).then(ownersFromAPI => {
             setOwners(ownersFromAPI)
         })
     }
