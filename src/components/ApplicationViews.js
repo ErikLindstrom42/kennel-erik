@@ -7,8 +7,10 @@ import Home from "./home/Home";
 
 
 import AnimalList from "./animal/AnimalList"
+import AnimalDetail from "./animal/AnimalDetail"
 import EmployeeList from "./employee/EmployeeList"
 import LocationList from "./location/LocationList"
+import LocationDetail from "./location/LocationDetail"
 import OwnerList from "./owner/OwnerList"
 
 const ApplicationViews = () => {
@@ -22,16 +24,36 @@ const ApplicationViews = () => {
                 }}
             />
 
-            <Route path="/animals" render={(props) => {
+            {/* Make sure you add the `exact` attribute here */}
+            <Route exact path="/animals" render={(props) => {
                 return <AnimalList />
             }} />
+            <Route path="/animals/:animalId(\d+)" render={(props) => {
+                // Pass the animalId to the AnimalDetailComponent
+                return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+            }} />
+
+            {/*
+  This is a new route to handle a URL with the following pattern:
+  http://localhost:3000/animals/1
+
+  It will not handle the following URL because the `(\d+)`
+  matches only numbers after the final slash in the URL
+  http://localhost:3000/animals/jack
+*/}
+
+
 
             <Route
-                path="/locations"
+                exact path="/locations"
                 render={props => {
                     return <LocationList />;
                 }}
             />
+
+            <Route path="/locations/:locationId(\d+)" render={(props) => {
+                return <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+            }} />
 
             <Route
                 path="/employees"
