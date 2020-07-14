@@ -4,7 +4,7 @@ import LocationCard from './LocationCard';
 import CommonManager from '../../modules/CommonManager';
 
 const type = "locations"
-const LocationList = () => {
+const LocationList = (props) => {
     console.log("Component Location List")
 
     const [locations, setLocations] = useState([])
@@ -21,15 +21,21 @@ const LocationList = () => {
             .then(() => CommonManager.getAll(type).then(setLocations));
     };
 
-
-
-
     useEffect(() => {
         console.log("useEffect")
         getLocations()
     }, [])
 
     return (
+        <>
+        <section className="section-content">
+  <button type="button"
+      className="btn"
+      onClick={() => {props.history.push("/locations/new")}}>
+      Open New Location
+  </button>
+</section>
+
         <div className="container-cards">
             {locations.map(location => <LocationCard
                 key={location.id} //passes unique id
@@ -38,6 +44,7 @@ const LocationList = () => {
 
             />)}
         </div>
+        </>
     )
 
 }

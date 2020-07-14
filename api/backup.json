@@ -1,24 +1,24 @@
 {
     "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
+        { "id": 1, "name": "Wishbone", "breed": "Jack Russell Terrier", "picture": "wishbone.jpg"},
+        { "id": 2, "name": "Clifford", "breed": "Big, red", "picture": "clifford.jpg" },
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "picture": "dog.svg" }
     ] ,
-
+  
     "employees": [
-        {"id": 1, "name": "Bubbles", "title":"Employee of the Month"},
-        {"id": 2, "name": "Bubbles", "title":"Employee of the Month"}
+        {"id": 1, "name": "Sarge", "title":"Sergeant", "picture": "sarge.png"},
+        {"id": 2, "name": "Matt Foley", "title":"Motivational Speaker", "picture": "mattfoley.gif"},
+        {"id": 3, "name": "Bubbles", "title":"Employee of the Month", "picture":"bubbles2.jpg"}
     ],
-
+  
     "locations": [
-        { "id": 1, "name": "Van", "location": "Down by the river"},
-        { "id": 2, "name": "Van", "location": "Down by the river"}
+        { "id": 1, "name": "Van", "location": "Down by the river", "picture": "narnia.jpg"},
+        { "id": 2, "name": "Narnia", "location": "A magical place", "picture":"van.jpg"}
     ],
-
+  
     "owners": [
-        {"id":1, "name": "Bubbles", "title":"Owner of the Month"},
-        {"id":2, "name": "Bubbles", "title":"Owner of the Month"}
+        {"id":1, "name": "Bubbles", "title":"Owner of the Month", "picture":"bubbles.jpg"},
+        {"id":2, "name": "Han Solo", "title":"Space Pirate", "picture":"hansolo.jpg"},
+        {"id":3, "name": "Old Gregg", "title":"Swamp Monster", "picture":"oldgregg.png"}
     ]
-}
-
-
+  }
