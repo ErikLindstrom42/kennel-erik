@@ -8,7 +8,7 @@ const OwnerCard = props => {
       <div className="card-content">
         <picture>
         
-          <img src={require(`./${props.person.picture}`)} alt={props.person.picture} />
+          <img src={require(`../../media/${props.person.picture}`)} alt={props.person.picture} />
         </picture>
         <h3>
           Name: <span className="card-petname">{props.person.name}</span>

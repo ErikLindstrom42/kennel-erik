@@ -4,7 +4,7 @@ import './LocationDetail.css'
 
 const type = "locations"
 const LocationDetail = props => {
-  const [location, setLocation] = useState({ name: "", location: "" });
+  const [location, setLocation] = useState({ name: "", location: "", picture:"" });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const LocationDetail = props => {
 
   const handleDelete = () => {
       setIsLoading(true)
-      CommonManager.delete(props.locationI,type).then(() =>
+      CommonManager.delete(props.locationId,type).then(() =>
       props.history.push(type)
       )
   }
@@ -30,9 +30,11 @@ const LocationDetail = props => {
   return (
     <div className="card">
       <div className="card-content">
+      { (location.picture !== "") && 
         <picture>
-          <img src={require('./van.jpg')} alt="My Van" />
+            <img src={require(`../../media/${location.picture}`)} alt={location.name} />
         </picture>
+        }
         <h3>Name: <span style={{ color: 'darkslategrey' }}>{location.name}</span></h3>
         <p>Location: {location.location}</p>
         <button type = "button" disabled={isLoading} onClick={handleDelete}>

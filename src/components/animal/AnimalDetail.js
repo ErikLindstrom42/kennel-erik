@@ -32,7 +32,7 @@ const AnimalDetail = props => {
       <div className="card-content">
       { (animal.picture !== "") && 
         <picture>
-            <img src={require(`./${animal.picture}`)} alt={animal.name} />
+            <img src={require(`../../media/${animal.picture}`)} alt={animal.name} />
         </picture>
         }
         <h3>Name: <span style={{ color: 'darkslategrey' }}>{animal.name}</span></h3>

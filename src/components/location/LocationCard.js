@@ -8,7 +8,7 @@ const LocationCard = (props) => {
     <div className="card">
       <div className="card-content">
         <picture>
-          <img src={require(`./${props.spot.picture}`)} alt={props.spot.name} />
+          <img src={require(`../../media/${props.spot.picture}`)} alt={props.spot.name} />
         </picture>
         <h3>
           Location: <span className="card-petname">{props.spot.location}</span>
